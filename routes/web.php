@@ -16,5 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'index'])->name('home');
 
+Route::get('/miglioriFilm', [PageController::class, 'bestMovies'])->name('bestMovies');
 
-Route::get('/nuova-pagina', [PageController::class, 'nuovaPagina'] )->name('nuovaPagina');
+
+Route::get('/dettagli/{id}', [PageController::class, 'movieDetails'] )->name('movieDetails');

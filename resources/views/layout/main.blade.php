@@ -10,9 +10,13 @@
      @vite('resources/js/app.js')
 
 </head>
-<body>
+<body class=" bg-black">
+
+
 
  @include('partials.header')
+
+ @yield('title')
 
  <main>
 

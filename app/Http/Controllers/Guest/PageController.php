@@ -10,17 +10,33 @@ class PageController extends Controller
 {
     public function index(){
 
-        return view('home');
+        $movies= Movie::all();
+
+        $pageTitle= 'HOME';
+
+        return view('home',compact('movies','pageTitle'));
+    }
+
+    public function bestMovies(){
+
+        $movies= Movie::where('vote','>',6.5)->get();
+
+        $pageTitle= 'I MIGLIORI FILM';
+
+        return view('home',compact('movies','pageTitle'));
     }
 
 
+    public function movieDetails($id){
 
-    public function nuovaPagina(){
+        $movie = Movie::find($id);
 
-        $movies= Movie::all();
+        if (!isset($movie)) {
+            abort(404);
+        }
 
-        dd($movies);
 
-        return view('nuovaPagina');
+
+        return view('movieDetails', compact('movie'));
     }
 }

@@ -1,4 +1,4 @@
-<header>
+<footer class=" bg-dark p-3 text-center text-danger">
 
-    <h1>FOOTER</h1>
-</header>
+    <h2>Powered by Boolflix</h2>
+</footer>

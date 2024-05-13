@@ -19,7 +19,7 @@ class PageController extends Controller
 
     public function bestMovies(){
 
-        $movies= Movie::where('vote','>',6.5)->get();
+        $movies= Movie::where('vote','>',9)->get();
 
         $pageTitle= 'I MIGLIORI FILM';
 
